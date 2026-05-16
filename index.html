@@ -7,8 +7,13 @@
 
 <title>Regalado Martínez Abogados</title>
 
+<meta name="description" content="Especialistas en derecho societario, tránsito, AMT y ANT en Ecuador. Defensa legal estratégica y profesional.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 
@@ -26,6 +31,17 @@ color:white;
 overflow-x:hidden;
 }
 
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#2c1d05 0%,transparent 30%),
+radial-gradient(circle at bottom,#111 0%,transparent 40%);
+z-index:-1;
+}
+
 header{
 position:fixed;
 top:0;
@@ -35,16 +51,46 @@ padding:22px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-z-index:1000;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(212,175,55,0.15);
+z-index:1000;
 }
 
 .logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-box{
+width:58px;
+height:58px;
+border:2px solid #d4af37;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
 font-family:'Cinzel',serif;
-font-size:30px;
+font-size:28px;
 font-weight:700;
+color:#d4af37;
+box-shadow:0 0 20px rgba(212,175,55,0.2);
+}
+
+.logo-text{
+line-height:1.1;
+}
+
+.logo-text h2{
+font-family:'Cinzel',serif;
+font-size:18px;
+letter-spacing:2px;
+}
+
+.logo-text span{
+font-size:11px;
+letter-spacing:4px;
 color:#d4af37;
 }
 
@@ -54,17 +100,33 @@ text-decoration:none;
 margin-left:30px;
 font-size:15px;
 transition:0.3s;
+position:relative;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:1px;
+background:#d4af37;
+transition:0.3s;
 }
 
 nav a:hover{
 color:#d4af37;
 }
 
+nav a:hover::after{
+width:100%;
+}
+
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.88)),
-url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop');
+linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1800&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -75,44 +137,62 @@ padding:20px;
 }
 
 .hero-content{
-max-width:950px;
+max-width:1000px;
 animation:fadeUp 1.2s ease;
 }
 
 .hero h1{
 font-family:'Cinzel',serif;
 font-size:95px;
-line-height:1.1;
+line-height:1.05;
 margin-bottom:25px;
 }
 
-.hero h1 span{
+.gold{
 color:#d4af37;
 }
 
 .hero p{
-font-size:23px;
+font-size:24px;
 line-height:1.8;
 color:#e0e0e0;
 margin-bottom:40px;
 }
 
+.buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
 .btn{
 display:inline-block;
 padding:18px 45px;
-border:2px solid #d4af37;
-color:#d4af37;
-text-decoration:none;
 border-radius:60px;
+text-decoration:none;
 font-weight:600;
 transition:0.4s;
 }
 
-.btn:hover{
+.btn-gold{
 background:#d4af37;
 color:black;
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(212,175,55,0.35);
+}
+
+.btn-gold:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(212,175,55,0.4);
+}
+
+.btn-outline{
+border:2px solid #d4af37;
+color:#d4af37;
+}
+
+.btn-outline:hover{
+background:#d4af37;
+color:black;
 }
 
 .section{
@@ -132,13 +212,13 @@ font-size:14px;
 
 .section-title h2{
 font-family:'Cinzel',serif;
-font-size:55px;
+font-size:58px;
 margin-top:10px;
 }
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
 gap:30px;
 }
 
@@ -146,32 +226,32 @@ gap:30px;
 background:rgba(255,255,255,0.03);
 border:1px solid rgba(212,175,55,0.12);
 padding:40px 30px;
-border-radius:25px;
-backdrop-filter:blur(8px);
+border-radius:30px;
+backdrop-filter:blur(10px);
 transition:0.4s;
 }
 
 .card:hover{
 transform:translateY(-12px);
 border-color:#d4af37;
+box-shadow:0 15px 35px rgba(212,175,55,0.12);
 }
 
-.card img{
-width:70px;
+.card i{
+font-size:45px;
+color:#d4af37;
 margin-bottom:25px;
-filter:brightness(0) saturate(100%) invert(74%) sepia(41%) saturate(592%) hue-rotate(8deg) brightness(95%) contrast(92%);
 }
 
 .card h3{
 font-family:'Cinzel',serif;
 font-size:28px;
 margin-bottom:18px;
-color:#d4af37;
 }
 
 .card p{
 line-height:1.8;
-color:#d7d7d7;
+color:#d6d6d6;
 }
 
 .about{
@@ -183,13 +263,13 @@ align-items:center;
 
 .about img{
 width:100%;
-border-radius:30px;
+border-radius:35px;
 box-shadow:0 10px 40px rgba(0,0,0,0.5);
 }
 
 .about-text h2{
 font-family:'Cinzel',serif;
-font-size:52px;
+font-size:55px;
 margin-bottom:25px;
 }
 
@@ -200,37 +280,120 @@ color:#d5d5d5;
 margin-bottom:20px;
 }
 
+.stats{
+margin-top:30px;
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.stat{
+background:rgba(255,255,255,0.04);
+padding:20px 25px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,0.15);
+}
+
+.stat h3{
+font-size:32px;
+color:#d4af37;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:rgba(255,255,255,0.03);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(212,175,55,0.12);
+}
+
+.testimonial p{
+line-height:1.8;
+color:#ddd;
+margin-bottom:20px;
+}
+
+.stars{
+color:#d4af37;
+margin-bottom:15px;
+}
+
 .contact{
-text-align:center;
 background:
-linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1400&auto=format&fit=crop');
+linear-gradient(rgba(0,0,0,0.86), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
-border-radius:35px;
-padding:80px 30px;
+padding:90px 40px;
+border-radius:40px;
+text-align:center;
 border:1px solid rgba(212,175,55,0.15);
 }
 
 .contact h2{
 font-family:'Cinzel',serif;
-font-size:55px;
+font-size:60px;
 margin-bottom:30px;
 }
 
 .contact p{
 font-size:22px;
-margin:15px 0;
-color:#e2e2e2;
+margin:18px 0;
+color:#e0e0e0;
+}
+
+.contact a{
+color:#d4af37;
+text-decoration:none;
 }
 
 footer{
-padding:35px;
-text-align:center;
+margin-top:100px;
+padding:50px 8%;
 background:black;
-color:#888;
-margin-top:80px;
 border-top:1px solid rgba(212,175,55,0.12);
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer-title{
+font-family:'Cinzel',serif;
+font-size:24px;
+margin-bottom:20px;
+color:#d4af37;
+}
+
+.footer-text{
+color:#aaa;
+line-height:1.8;
+}
+
+.footer-links a{
+display:block;
+margin:10px 0;
+color:#ccc;
+text-decoration:none;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:#d4af37;
+}
+
+.copy{
+margin-top:40px;
+text-align:center;
+color:#777;
+font-size:14px;
 }
 
 .whatsapp{
@@ -239,17 +402,29 @@ bottom:25px;
 right:25px;
 background:#d4af37;
 color:black;
-padding:18px 24px;
-border-radius:60px;
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
 text-decoration:none;
-font-weight:700;
 box-shadow:0 10px 30px rgba(212,175,55,0.4);
-transition:0.3s;
+animation:pulse 2s infinite;
 z-index:999;
 }
 
-.whatsapp:hover{
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
 transform:scale(1.08);
+}
+100%{
+transform:scale(1);
+}
 }
 
 @keyframes fadeUp{
@@ -263,7 +438,7 @@ transform:translateY(0);
 }
 }
 
-@media(max-width:900px){
+@media(max-width:950px){
 
 header{
 flex-direction:column;
@@ -275,7 +450,7 @@ margin-top:15px;
 }
 
 .hero h1{
-font-size:52px;
+font-size:58px;
 }
 
 .hero p{
@@ -290,10 +465,13 @@ grid-template-columns:1fr;
 padding:90px 7%;
 }
 
+.contact h2{
+font-size:42px;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
@@ -301,13 +479,23 @@ padding:90px 7%;
 <header>
 
 <div class="logo">
-RM ABOGADOS
+
+<div class="logo-box">
+RM
+</div>
+
+<div class="logo-text">
+<h2>REGALADO MARTÍNEZ</h2>
+<span>ABOGADOS</span>
+</div>
+
 </div>
 
 <nav>
 <a href="#inicio">Inicio</a>
 <a href="#servicios">Servicios</a>
 <a href="#nosotros">Nosotros</a>
+<a href="#testimonios">Opiniones</a>
 <a href="#contacto">Contacto</a>
 </nav>
 
@@ -318,18 +506,26 @@ RM ABOGADOS
 <div class="hero-content">
 
 <h1>
-<span>REGALADO</span><br>
-MARTÍNEZ ABOGADOS
+<span class="gold">DEFENSA LEGAL</span><br>
+DE ALTO NIVEL
 </h1>
 
 <p>
-Defensa legal estratégica y profesional.
-Protegemos tus derechos con experiencia, compromiso y resultados.
+Especialistas en derecho societario, tránsito, AMT y ANT.
+Representación jurídica moderna, estratégica y profesional.
 </p>
 
-<a class="btn" href="https://wa.me/593979389719">
-CONTACTAR AHORA
+<div class="buttons">
+
+<a class="btn btn-gold" href="https://wa.me/593979389719?text=Hola%2C%20necesito%20asesor%C3%ADa%20legal">
+Contactar Ahora
 </a>
+
+<a class="btn btn-outline" href="#servicios">
+Ver Servicios
+</a>
+
+</div>
 
 </div>
 
@@ -337,37 +533,45 @@ CONTACTAR AHORA
 
 <section class="section" id="servicios">
 
-<div class="logo">
-<span style="font-size:42px;">RM</span><br>
-<span style="font-size:13px; letter-spacing:4px;">
-REGALADO MARTÍNEZ
-</span>
+<div class="section-title">
+<span>SERVICIOS</span>
+<h2>Áreas de Práctica</h2>
 </div>
+
 <div class="services">
 
 <div class="card">
-
-<img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
-
+<i class="fa-solid fa-scale-balanced"></i>
 <h3>Derecho Societario</h3>
-
 <p>
 Asesoría especializada para empresas, constitución de compañías y procesos societarios.
 </p>
-
 </div>
 
 <div class="card">
-
-<img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png">
-
-<h3>Procesos AMT y ANT</h3>
-
+<i class="fa-solid fa-car-burst"></i>
+<h3>Derecho de Tránsito</h3>
 <p>
-Defensa y asesoría profesional en trámites, citaciones, impugnaciones y procesos de tránsito ante la AMT y ANT.
+Defensa legal en accidentes, multas y procedimientos administrativos.
 </p>
-
 </div>
+
+<div class="card">
+<i class="fa-solid fa-road"></i>
+<h3>Procesos AMT y ANT</h3>
+<p>
+Impugnaciones, trámites, citaciones y defensa ante organismos de tránsito.
+</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-file-signature"></i>
+<h3>Contratos</h3>
+<p>
+Redacción y validación de contratos con protección jurídica estratégica.
+</p>
+</div>
+
 </div>
 
 </section>
@@ -376,23 +580,93 @@ Defensa y asesoría profesional en trámites, citaciones, impugnaciones y proces
 
 <div class="about">
 
-<img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?q=80&w=1400&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1400&auto=format&fit=crop">
 
 <div class="about-text">
 
 <h2>Sobre Nosotros</h2>
 
 <p>
-En Regalado Martínez Abogados brindamos soluciones legales modernas, efectivas y transparentes.
+En Regalado Martínez Abogados brindamos soluciones jurídicas modernas, efectivas y transparentes.
 </p>
 
 <p>
-Nuestro objetivo es ofrecer atención personalizada y resultados sólidos para cada cliente.
+Nuestro objetivo es proteger los intereses de cada cliente con profesionalismo, estrategia y compromiso.
 </p>
 
-<a class="btn" href="https://wa.me/593979389719">
-Hablar por WhatsApp
-</a>
+<div class="stats">
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Atención</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Compromiso</p>
+</div>
+
+<div class="stat">
+<h3>Legal</h3>
+<p>Defensa</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="testimonios">
+
+<div class="section-title">
+<span>CLIENTES</span>
+<h2>Opiniones</h2>
+</div>
+
+<div class="testimonials">
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Excelente atención y asesoría profesional. Resolución rápida de mi caso de tránsito.”
+</p>
+
+<h4>- Cliente</h4>
+
+</div>
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Muy profesionales y transparentes durante todo el proceso legal.”
+</p>
+
+<h4>- Cliente</h4>
+
+</div>
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Atención inmediata y excelente defensa jurídica.”
+</p>
+
+<h4>- Cliente</h4>
 
 </div>
 
@@ -406,22 +680,27 @@ Hablar por WhatsApp
 
 <h2>Contacto</h2>
 
-<p>📞 097 938 9719</p>
-
 <p>
-✉️ regaladomartinez.abogados@gmail.com
+<i class="fa-solid fa-phone"></i>
+097 938 9719
 </p>
 
-<p>📍 Ecuador</p>
+<p>
+<i class="fa-solid fa-envelope"></i>
+<a href="mailto:regaladomartinez.abogados@gmail.com">
+regaladomartinez.abogados@gmail.com
+</a>
+</p>
 
 <p>
-⚖️ Especialistas en derecho societario y tránsito
+<i class="fa-solid fa-location-dot"></i>
+Ecuador
 </p>
 
 <br>
 
-<a class="btn" href="https://wa.me/593979389719">
-ESCRIBIR AHORA
+<a class="btn btn-gold" href="https://wa.me/593979389719?text=Hola%2C%20necesito%20asesor%C3%ADa%20legal">
+Escribir Ahora
 </a>
 
 </div>
@@ -429,13 +708,62 @@ ESCRIBIR AHORA
 </section>
 
 <footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3 class="footer-title">
+Regalado Martínez
+</h3>
+
+<p class="footer-text">
+Firma jurídica especializada en derecho societario y tránsito.
+Atención estratégica, moderna y profesional.
+</p>
+
+</div>
+
+<div>
+
+<h3 class="footer-title">
+Servicios
+</h3>
+
+<div class="footer-links">
+<a href="#">Derecho Societario</a>
+<a href="#">Procesos AMT</a>
+<a href="#">Procesos ANT</a>
+<a href="#">Defensa Jurídica</a>
+</div>
+
+</div>
+
+<div>
+
+<h3 class="footer-title">
+Contacto
+</h3>
+
+<div class="footer-links">
+<a href="#">097 938 9719</a>
+<a href="#">regaladomartinez.abogados@gmail.com</a>
+<a href="#">Ecuador</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="copy">
 © 2026 Regalado Martínez Abogados — Todos los derechos reservados
+</div>
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/593979389719">
-WhatsApp
+<a class="whatsapp" href="https://wa.me/593979389719?text=Hola%2C%20necesito%20asesor%C3%ADa%20legal">
+<i class="fa-brands fa-whatsapp"></i>
 </a>
 
 </body>
-
 </html>
