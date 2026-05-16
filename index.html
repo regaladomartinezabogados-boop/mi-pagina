@@ -20,43 +20,32 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#060606;
 font-family:'Poppins',sans-serif;
+background:#050505;
 color:white;
 overflow-x:hidden;
-}
-
-body::before{
-content:'';
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top,#2d1f06 0%,transparent 30%),
-radial-gradient(circle at bottom,#111 0%,transparent 40%);
-z-index:-1;
 }
 
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-padding:20px 8%;
+padding:22px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.75);
+background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(212,175,55,0.2);
 z-index:1000;
+border-bottom:1px solid rgba(212,175,55,0.15);
 }
 
 .logo{
 font-family:'Cinzel',serif;
-font-size:28px;
+font-size:30px;
 font-weight:700;
 color:#d4af37;
-letter-spacing:2px;
 }
 
 nav a{
@@ -65,40 +54,24 @@ text-decoration:none;
 margin-left:30px;
 font-size:15px;
 transition:0.3s;
-position:relative;
-}
-
-nav a::after{
-content:'';
-position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:1px;
-background:#d4af37;
-transition:0.3s;
 }
 
 nav a:hover{
 color:#d4af37;
 }
 
-nav a:hover::after{
-width:100%;
-}
-
 .hero{
 height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
 background:
 linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.88)),
-url('https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?q=80&w=1600&auto=format&fit=crop');
+url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
 }
 
 .hero-content{
@@ -108,30 +81,29 @@ animation:fadeUp 1.2s ease;
 
 .hero h1{
 font-family:'Cinzel',serif;
-font-size:82px;
+font-size:85px;
 line-height:1.1;
 margin-bottom:25px;
-color:white;
 }
 
-.gold{
+.hero h1 span{
 color:#d4af37;
 }
 
 .hero p{
 font-size:23px;
-color:#d8d8d8;
-line-height:1.7;
+line-height:1.8;
+color:#e0e0e0;
 margin-bottom:40px;
 }
 
 .btn{
 display:inline-block;
-padding:18px 42px;
+padding:18px 45px;
 border:2px solid #d4af37;
 color:#d4af37;
 text-decoration:none;
-border-radius:50px;
+border-radius:60px;
 font-weight:600;
 transition:0.4s;
 }
@@ -140,11 +112,11 @@ transition:0.4s;
 background:#d4af37;
 color:black;
 transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(212,175,55,0.3);
+box-shadow:0 10px 25px rgba(212,175,55,0.35);
 }
 
 .section{
-padding:120px 9%;
+padding:120px 8%;
 }
 
 .section-title{
@@ -154,13 +126,13 @@ margin-bottom:70px;
 
 .section-title span{
 color:#d4af37;
-letter-spacing:3px;
+letter-spacing:4px;
 font-size:14px;
 }
 
 .section-title h2{
 font-family:'Cinzel',serif;
-font-size:52px;
+font-size:55px;
 margin-top:10px;
 }
 
@@ -171,28 +143,12 @@ gap:30px;
 }
 
 .card{
-background:linear-gradient(145deg,#111,#0a0a0a);
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(212,175,55,0.12);
 padding:40px 30px;
-border:1px solid rgba(212,175,55,0.15);
 border-radius:25px;
+backdrop-filter:blur(8px);
 transition:0.4s;
-position:relative;
-overflow:hidden;
-}
-
-.card::before{
-content:'';
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(90deg,transparent,rgba(212,175,55,0.08),transparent);
-transition:0.7s;
-}
-
-.card:hover::before{
-left:100%;
 }
 
 .card:hover{
@@ -200,16 +156,22 @@ transform:translateY(-12px);
 border-color:#d4af37;
 }
 
+.card img{
+width:70px;
+margin-bottom:25px;
+filter:brightness(0) saturate(100%) invert(74%) sepia(41%) saturate(592%) hue-rotate(8deg) brightness(95%) contrast(92%);
+}
+
 .card h3{
 font-family:'Cinzel',serif;
-font-size:26px;
-margin-bottom:20px;
+font-size:28px;
+margin-bottom:18px;
 color:#d4af37;
 }
 
 .card p{
-color:#cfcfcf;
 line-height:1.8;
+color:#d7d7d7;
 }
 
 .about{
@@ -221,49 +183,54 @@ align-items:center;
 
 .about img{
 width:100%;
-border-radius:25px;
-border:1px solid rgba(212,175,55,0.2);
+border-radius:30px;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
 }
 
 .about-text h2{
 font-family:'Cinzel',serif;
-font-size:50px;
+font-size:52px;
 margin-bottom:25px;
 }
 
 .about-text p{
 line-height:1.9;
-color:#d4d4d4;
 font-size:18px;
+color:#d5d5d5;
 margin-bottom:20px;
 }
 
-.contact-box{
-background:linear-gradient(145deg,#101010,#080808);
-padding:60px;
-border-radius:30px;
-border:1px solid rgba(212,175,55,0.15);
+.contact{
 text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+border-radius:35px;
+padding:80px 30px;
+border:1px solid rgba(212,175,55,0.15);
 }
 
-.contact-box h2{
+.contact h2{
 font-family:'Cinzel',serif;
-font-size:48px;
-margin-bottom:25px;
+font-size:55px;
+margin-bottom:30px;
 }
 
-.contact-box p{
+.contact p{
 font-size:22px;
 margin:15px 0;
-color:#ddd;
+color:#e2e2e2;
 }
 
 footer{
 padding:35px;
 text-align:center;
-border-top:1px solid rgba(212,175,55,0.15);
-color:#999;
 background:black;
+color:#888;
+margin-top:80px;
+border-top:1px solid rgba(212,175,55,0.12);
 }
 
 .whatsapp{
@@ -276,7 +243,7 @@ padding:18px 24px;
 border-radius:60px;
 text-decoration:none;
 font-weight:700;
-box-shadow:0 8px 30px rgba(212,175,55,0.4);
+box-shadow:0 10px 30px rgba(212,175,55,0.4);
 transition:0.3s;
 z-index:999;
 }
@@ -326,6 +293,7 @@ padding:90px 7%;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -350,17 +318,17 @@ RM ABOGADOS
 <div class="hero-content">
 
 <h1>
-<span class="gold">REGALADO</span><br>
+<span>REGALADO</span><br>
 MARTÍNEZ ABOGADOS
 </h1>
 
 <p>
-Defensa legal estratégica, profesional y efectiva.
-Protegemos tus derechos con compromiso, experiencia y atención personalizada.
+Defensa legal estratégica y profesional.
+Protegemos tus derechos con experiencia, compromiso y resultados.
 </p>
 
 <a class="btn" href="https://wa.me/593979389719">
-CONSULTAR AHORA
+CONTACTAR AHORA
 </a>
 
 </div>
@@ -377,31 +345,51 @@ CONSULTAR AHORA
 <div class="services">
 
 <div class="card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3097/3097183.png">
+
 <h3>Tránsito</h3>
+
 <p>
 Defensa y asesoría en accidentes de tránsito, multas y procesos vehiculares.
 </p>
+
 </div>
 
 <div class="card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
+
 <h3>Asesoría Jurídica</h3>
+
 <p>
-Consultoría legal profesional para personas y empresas en distintas áreas.
+Consultoría legal profesional para personas y empresas.
 </p>
+
 </div>
 
 <div class="card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+
 <h3>Contratos</h3>
+
 <p>
-Redacción y validación de contratos con protección jurídica estratégica.
+Redacción y validación de contratos con seguridad jurídica.
 </p>
+
 </div>
 
 <div class="card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+
 <h3>Defensa Legal</h3>
+
 <p>
-Representación sólida y efectiva en procesos legales y judiciales.
+Representación sólida y estratégica en procesos judiciales.
 </p>
+
 </div>
 
 </div>
@@ -412,7 +400,7 @@ Representación sólida y efectiva en procesos legales y judiciales.
 
 <div class="about">
 
-<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1528747008803-1f0edcbf32c1?q=80&w=1200&auto=format&fit=crop">
 
 <div class="about-text">
 
@@ -423,7 +411,7 @@ En Regalado Martínez Abogados brindamos soluciones legales modernas, efectivas 
 </p>
 
 <p>
-Nuestro compromiso es ofrecer atención personalizada, estratégica y confiable para cada cliente.
+Nuestro objetivo es ofrecer atención personalizada y resultados sólidos para cada cliente.
 </p>
 
 <a class="btn" href="https://wa.me/593979389719">
@@ -436,9 +424,9 @@ Hablar por WhatsApp
 
 </section>
 
-<section class="section" id="contacto">
+<section class="section">
 
-<div class="contact-box">
+<div class="contact" id="contacto">
 
 <h2>Contacto</h2>
 
@@ -465,4 +453,5 @@ WhatsApp
 </a>
 
 </body>
+
 </html>
